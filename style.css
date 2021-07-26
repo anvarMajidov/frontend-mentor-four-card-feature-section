@@ -1,0 +1,153 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 15px;
+}
+
+main {
+  font-family: "Poppins", sans-serif;
+  min-height: 100vh;
+  padding: 5.33em 0;
+  background-color: hsl(0, 0%, 98%);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  width: 82.93%;
+  max-width: 1110px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.container__header {
+  text-align: center;
+  align-self: center;
+  max-width: 557px;
+  padding-bottom: 4.2em;
+}
+
+.container__header > p:nth-child(1) {
+  font-size: 2.4rem;
+  font-weight: 200;
+  letter-spacing: 0.2px;
+}
+
+.container__header > h1 {
+  color: hsl(234, 12%, 34%);
+  font-size: 2.4rem;
+  font-weight: 600;
+}
+
+.container__header > p:nth-child(3) {
+  padding-top: 1em;
+  font-weight: 400;
+  letter-spacing: 0.1px;
+  line-height: 25px;
+}
+
+.container__cards {
+  display: grid;
+  grid-template:
+    ". second ." 1fr
+    "first second fourth" 1fr
+    "first third fourth" 1fr
+    ". third ." 1fr
+    /1fr 1fr 1fr;
+
+  column-gap: 2em;
+  row-gap: 2em;
+}
+
+.card:nth-child(1) {
+  grid-area: first;
+}
+.card:nth-child(2) {
+  grid-area: second;
+}
+.card:nth-child(3) {
+  grid-area: third;
+}
+.card:nth-child(4) {
+  grid-area: fourth;
+}
+
+.card {
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: white;
+  box-shadow: 0 10px 20px 0 rgb(214, 214, 214);
+}
+
+.card__inner {
+  height: 100%;
+  padding: 2.13em;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.card:nth-child(1) .card__inner {
+  box-shadow: 0 5px 0 0 hsl(180, 62%, 55%) inset;
+}
+
+.card:nth-child(2) .card__inner {
+  box-shadow: 0 5px 0 0 hsl(0, 78%, 62%) inset;
+}
+
+.card:nth-child(3) .card__inner {
+  box-shadow: 0 5px 0 0 hsl(34, 97%, 64%) inset;
+}
+
+.card:nth-child(4) .card__inner {
+  box-shadow: 0 5px 0 0 hsl(212, 86%, 64%) inset;
+}
+
+.card img {
+  align-self: flex-end;
+  margin-top: auto;
+}
+
+.card__info p:nth-child(1) {
+  color: hsl(234, 12%, 34%);
+  font-size: 1.33rem;
+  font-weight: 600;
+}
+.card__info p:nth-child(2) {
+  color: hsl(229, 6%, 36%);
+  line-height: 23px;
+  letter-spacing: 0.1px;
+  font-size: 0.87rem;
+  padding-top: 0.61em;
+  padding-bottom: 2.45em;
+}
+
+@media (max-width: 900px) {
+  .container__cards {
+    grid-template:
+      "first second" 1fr
+      "third fourth" 1fr
+      /1fr 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .container__cards {
+    grid-template:
+      "first" 1fr
+      "second" 1fr
+      "third" 1fr
+      "fourth" 1fr
+      /1fr;
+  }
+}
